@@ -1,0 +1,5 @@
+Objet est une instance de classe
+Si une premiere classe herite d'une second implique que la premiere a' tout les champs de la seconde et possiblement plus
+Un objet de classe C qui herite de C' n'est pas une instance de C'
+Oui, si elles partagent un meme concept
+ouais
