@@ -43,6 +43,11 @@ class Voiture extends Vehicule {
 	void RMautoradio () {
 		this.autoradio = false;
 	}
+
+	void afficher(){
+		super.afficher();
+		System.out.println("Voiture "+(autoradio?"avec":"sans")+" autoradio");
+	}
 }
 
 class Utilitaire extends Vehicule {
@@ -56,6 +61,10 @@ class Utilitaire extends Vehicule {
 	Boolean peutTransporterVolume (float v) {
 		return (v<=volume);
 	}
+	void afficher(){
+		super.afficher();
+		System.out.println("Volume = "+volume);
+	}
 }
 
 class AutoCar extends Utilitaire {
@@ -68,6 +77,15 @@ class AutoCar extends Utilitaire {
 
 	Boolean peutTransporterPassagers(int p, float v){
 		return (p<=voyageurs && peutTransporterVolume(p*v));
+	}
+
+	int coutLocation() {
+		return super.coutLocation() + (voyageurs>40 ? 50 : 0);
+	}
+
+	void afficher(){
+		super.afficher();
+		System.out.println("Places = "+voyageurs);
 	}
 }
 
@@ -84,6 +102,7 @@ class Main {
 		System.out.println(V1.coutLocation());
 
 		AutoCar AU1 = new AutoCar("FR1",2018-2,90000,"3456 IJ 49",'D',3.0f,53);
-		System.out.println(AU1.peutTransporterPassagers(40,0.1f));
+		System.out.println(AU1.coutLocation()+" "+AU1.peutTransporterPassagers(40,0.1f));
+		AU1.afficher();
 	}
 }

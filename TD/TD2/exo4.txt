@@ -1,0 +1,11 @@
+Good morning 
+J'ai 0 ans.
+Je suis une femme.
+Goeie dag 
+J'ai 20 ans.
+Je suis une femme.
+Bonjour
+J'ai 20 ans.
+Je suis un homme.
+
+On pourrais faire d'age et masculin des champs private (ils sont protected)
