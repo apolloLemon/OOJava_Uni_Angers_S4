@@ -1,0 +1,3 @@
+l'utilisation du this ou du self
+Les constructeurs permettent d'instancier un objet et affecter ses champs
+private
