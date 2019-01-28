@@ -1,0 +1,6 @@
+une instance de C partage' par A et B (et les instances de A et B)
+
+Sortie:
+"c dans A : C@Adresse"
+"c dans B : C@Adresse"
+"2"
