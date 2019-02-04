@@ -4,6 +4,12 @@ class Vehicule {
 	int prixAchat;
 	String immatriculation;
 	char permis;
+	int ID;
+
+	static int idNonUtilisee = 1;
+	static void RAZ(){
+		idNonUtilisee = 1;
+	}
 
 	public Vehicule(String m,int y,int p,String i, char l) {
 		modele = m;
@@ -11,7 +17,7 @@ class Vehicule {
 		prixAchat = p;
 		immatriculation = i;
 		permis = l;
-
+		ID = idNonUtilisee++;
 	}
 
 	int age(){
@@ -67,13 +73,14 @@ class Utilitaire extends Vehicule {
 	}
 }
 
-class AutoCar extends Utilitaire {
+final class AutoCar extends Utilitaire final{
 	int voyageurs;
 	int majoration;
 
 	AutoCar(String m,int y,int p,String i, char l, float v, int t){
 		super(m,y,p,i,l,v);
 		voyageurs = t;
+		majoration = 50;
 	}
 
 	Boolean peutTransporterPassagers(int p, float v){
@@ -84,8 +91,8 @@ class AutoCar extends Utilitaire {
 		return super.coutLocation() + (voyageurs>40 ? majoration : 0);
 	}
 
-	int fixerMajoration(int x){
-		majoration=x;
+	void fixerMajoration(int a){
+		majoration = a;
 	}
 
 	void afficher(){
