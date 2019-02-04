@@ -1,0 +1,4 @@
+Une Methode Finale ne peux pas etre redefini dans une sous classe. Une Methode Abstraite doit etre redefini dans tout les sous classes.
+Une Classe Finale est une classe qui n'as pas de sous classes. Une Classe Abstrait ne peux pas etre intentie'
+Une Variable Finale est constante. Les variables abstraites n'existent pas.
+(static) Une variable de classe est une vriable globale

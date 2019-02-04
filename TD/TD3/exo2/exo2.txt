@@ -1,0 +1,4 @@
+
+
+
+la Classe Agence peut etre abstraite car il n'y aurra jamais d'Agences simples, toujours des bureaux ou' des garages. TaillePersonnel ne dois pas devenir une methode abstraite, et on en a besoin.
