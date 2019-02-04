@@ -57,7 +57,7 @@ class Bureau extends Agence {
 	}
 
 	void ajoutGarage(Garage g){
-		garages.add(g);
+		if(garages.size()<4) garages.add(g);
 	}
 	void retraitGarage(Garage g){
 		garages.remove(g);
