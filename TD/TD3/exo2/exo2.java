@@ -14,7 +14,8 @@ abstract class Agence {
 	}
 
 	abstract int taillePersonnelNonAdmin ();
-
+	abstract int nbMecaniciens();
+	
 	String getName(){
 		return nom;
 	}
@@ -134,8 +135,8 @@ class Main {
 		B1.ajoutGarage(G1);
 
 		E.ajouter(B1);
-		Agence B2 = E.recherche("Bab");
+		Agence B2 = E.recherche("B1");
 		System.out.println(B1);
-		System.out.println(B2);
+		System.out.println(B2.nbMecaniciens());
 	}
 }
