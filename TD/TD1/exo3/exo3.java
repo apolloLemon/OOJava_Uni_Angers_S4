@@ -1,4 +1,9 @@
 class Vehicule {
+	static int idNonUtilisee = 1;
+	static void RAZ(){
+		idNonUtilisee = 1;
+	}
+
 	String modele;
 	int anneAchat;
 	int prixAchat;
@@ -6,18 +11,13 @@ class Vehicule {
 	char permis;
 	int ID;
 
-	static int idNonUtilisee = 1;
-	static void RAZ(){
-		idNonUtilisee = 1;
-	}
-
 	public Vehicule(String m,int y,int p,String i, char l) {
 		modele = m;
 		anneAchat = y;
 		prixAchat = p;
 		immatriculation = i;
 		permis = l;
-		ID = idNonUtilisee++;
+		ID = Vehicule.idNonUtilisee++;
 	}
 
 	int age(){
@@ -73,7 +73,7 @@ class Utilitaire extends Vehicule {
 	}
 }
 
-final class AutoCar extends Utilitaire final{
+final class AutoCar extends Utilitaire {
 	int voyageurs;
 	int majoration;
 
@@ -116,5 +116,6 @@ class Main {
 		AutoCar AU1 = new AutoCar("FR1",2018-2,90000,"3456 IJ 49",'D',3.0f,53);
 		System.out.println(AU1.coutLocation()+" "+AU1.peutTransporterPassagers(40,0.1f));
 		AU1.afficher();
+
 	}
 }
