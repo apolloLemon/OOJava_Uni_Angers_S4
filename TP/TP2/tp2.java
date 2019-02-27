@@ -5,11 +5,18 @@
  */
 public class Batiment {
 	/**
-	 *Attributs: Adresse et surface
+	 *adresse
 	 */
 	private String adresse;
+	/**
+	 *surface
+	 */
 	private int surface;
 
+	/**
+	 *@param a adresse
+	 *@param s surface
+	 */
 	public Batiment(String a, int s){
 		adresse = a;
 		surface = s;
@@ -34,6 +41,7 @@ public class Batiment {
 
 	/**
 	 *retourne le plus gros batiement entre this et b2
+	 *@param b2 batiment avec lequel on compare
 	 */
 	public Batiment comparer(Batiment b2){
 		if(surface > b2.getSurface()) return this;
@@ -41,6 +49,11 @@ public class Batiment {
 	}
 }
 
+/**
+ * La classe Maison est un type de Batiment
+ * @author meLon@apolloLemon
+ * @version 1.0
+ */
 public class Maison extends Batiment {
 	private int nbPieces;
 	private int surfaceJardin;
