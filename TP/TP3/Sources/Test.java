@@ -19,8 +19,8 @@ public class Test {
 			
 			if(rep == 1){              
 				
-				nom = Saisie.lireEntier("Nom du Client: ");
-				annuaire
+				String nom = Saisie.lireChaine("Nom du Client: ");
+				annuaire.ajouterClient(nom);
 
 			} else if (rep ==2){ 
 				
