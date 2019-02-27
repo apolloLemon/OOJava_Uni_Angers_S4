@@ -35,4 +35,22 @@ public class Annuaire {
 	public int taille(){
 		return Clients.size();
 	}
+
+	public void Crediter(int num, double credit){
+		Client c = num2Client(num);
+		c.setSld(c.getSld()+credit);
+	}
+
+	public double allthemoney(){
+		double out=0;
+		for(Client c : Clients)
+			out += c.getSld();
+		return out;
+	}
+
+	public Boolean contient(Client c){
+		return Clients.contains(c);
+	}
+
+	
 }
