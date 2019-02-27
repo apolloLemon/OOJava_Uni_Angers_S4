@@ -43,11 +43,13 @@ public class Test {
 				
 			} else if (rep ==6){ 
 				
-				//A completer
+				int num = Saisie.lireEntier("Num du Client: ");
+				double credit = Saisie.lireReel("Montant du Credit : ");
+				annuaire.Crediter(num,credit);
 				
 			} else if (rep ==7){ 
 				
-				//A completer
+				System.out.println(annuaire.allthemoney());
 				
 			}
 		}
