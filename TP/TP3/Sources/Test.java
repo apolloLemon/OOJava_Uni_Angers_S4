@@ -33,7 +33,8 @@ public class Test {
 				
 			} else if (rep ==4){ 
 				
-				//A completer
+				int num = Saisie.lireEntier("Num du Client: ");
+				annuaire.Trouver(num);
 				
 			} else if (rep ==5){ 
 				

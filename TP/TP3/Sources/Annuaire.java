@@ -17,6 +17,12 @@ public class Annuaire {
 		}
 	}
 
+	public void Trouver(int num){
+		for (Client c : Clients)
+			if(c.getNum()==num)
+				System.out.println(c);
+	}
+
 	public int taille(){
 		return Clients.size();
 	}
