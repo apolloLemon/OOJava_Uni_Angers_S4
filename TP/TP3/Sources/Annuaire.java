@@ -17,10 +17,19 @@ public class Annuaire {
 		}
 	}
 
-	public void Trouver(int num){
+	private Client num2Client(int num){
 		for (Client c : Clients)
 			if(c.getNum()==num)
-				System.out.println(c);
+				return c;
+		return null;
+	}
+
+	public void Trouver(int num){
+		System.out.println(num2Client(num));
+	}
+
+	public void Retirer(int num){
+		Clients.remove(Clients.indexOf(num2Client(num)));
 	}
 
 	public int taille(){

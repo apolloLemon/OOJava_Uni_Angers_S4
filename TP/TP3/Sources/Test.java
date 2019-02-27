@@ -38,7 +38,8 @@ public class Test {
 				
 			} else if (rep ==5){ 
 				
-				//A completer
+				int num = Saisie.lireEntier("Num du Client: ");
+				annuaire.Retirer(num);
 				
 			} else if (rep ==6){ 
 				
