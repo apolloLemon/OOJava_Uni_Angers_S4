@@ -29,7 +29,7 @@ public class Test {
 	
 			} else if (rep ==3){ 
 				
-				//A completer
+				annuaire.ToutLister();
 				
 			} else if (rep ==4){ 
 				

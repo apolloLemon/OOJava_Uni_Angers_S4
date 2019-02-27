@@ -11,6 +11,12 @@ public class Annuaire {
 		Clients.add(new Client(nom));
 	}
 
+	public void ToutLister(){
+		for (Client c : Clients) {
+			System.out.println(c);
+		}
+	}
+
 	public int taille(){
 		return Clients.size();
 	}
