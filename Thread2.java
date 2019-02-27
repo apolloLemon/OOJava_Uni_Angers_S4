@@ -1,3 +1,4 @@
+//Pour Clavier.lireligne()
 import java.util.Scanner;
 
 class ReserveAjoutPuise {
@@ -25,7 +26,7 @@ class ReserveAjoutPuise {
 }
 
 class Reserve extends Thread {
-	int stock = 500;
+	int stock = 500; // ici !private pour pouvoir log
 	public synchronized void puise (int v) throws InterruptedException {
 		if(v<=stock) stock -=v; else wait();
 	}
