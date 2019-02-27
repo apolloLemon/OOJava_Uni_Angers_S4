@@ -24,7 +24,7 @@ public class Test {
 
 			} else if (rep ==2){ 
 				
-				//A completer
+				System.out.println("Il y a "+annuaire.taille()+" client"+((annuaire.taille()==1)?"":"s")+" dans l'annuaire.");
 		
 	
 			} else if (rep ==3){ 

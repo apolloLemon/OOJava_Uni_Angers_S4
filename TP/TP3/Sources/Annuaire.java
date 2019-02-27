@@ -10,4 +10,8 @@ public class Annuaire {
 	public void ajouterClient(String nom){
 		Clients.add(new Client(nom));
 	}
+
+	public int taille(){
+		return Clients.size();
+	}
 }
