@@ -11,6 +11,10 @@ public class Annuaire {
 		Clients.add(new Client(nom));
 	}
 
+	public void ajouterClient(Client c){
+		Clients.add(c);
+	}
+
 	public void ToutLister(){
 		for (Client c : Clients) {
 			System.out.println(c);
@@ -52,5 +56,5 @@ public class Annuaire {
 		return Clients.contains(c);
 	}
 
-	
+
 }
