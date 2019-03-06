@@ -126,3 +126,12 @@ class QuestionInterface5 {
 
 	}
 }
+
+/*
+6 - peux pas instentier abstract ou interface
+7 - factorier methodes et attributs
+8 - donner des methodes a' tout types de classes sans passer par l'heritage
+9 - methodes abstraites, peuvent pas etre intentiees'
+10- on doit implementer toutes les methodes de la classe abstraite
+10- et on peux implementer plusieurs interfaces
+*/
