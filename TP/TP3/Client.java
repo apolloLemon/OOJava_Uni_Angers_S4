@@ -20,6 +20,10 @@ class Client {
 	public String toString(){
 		return this.nom+" #"+this.numeroClient+"\nSolde: "+this.solde;
 	}
+
+	public boolean equals(Object o){
+		return (this.toString() == o.toString());
+	}
 }
 
 
