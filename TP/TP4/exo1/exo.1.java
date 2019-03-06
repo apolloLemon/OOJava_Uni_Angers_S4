@@ -112,12 +112,12 @@ class Plane implements Flying {
 class QuestionInterface5 {
 	public static void main (String args[]){
 
-		Sparrow S = new Sparrow(125,2);
+		Sparrow Jack = new Sparrow(125,2);
 		Plane P = new Plane("GO1984");
 
 		ArrayList<Flying> Flyers = new ArrayList<Flying>();
 
-		Flyers.add(S);
+		Flyers.add(Jack);
 		Flyers.add(P);
 
 		for(Flying f : Flyers){
