@@ -1,3 +1,5 @@
+import java.util.*;
+
 class Animal {
 	int weight, age;
 
@@ -28,18 +30,18 @@ class Bird extends Animal {
 	}*/
 }
 
-interface Fly {
+interface Flying {
 	void fly();
 }
 
-class Sparrow extends Animal implements Fly {
+class Sparrow extends Animal implements Flying {
 
 	Sparrow(int w, int a){
 		super(w,a);
 	}
 
 	public void fly(){
-		System.out.println("Fly me to the moon");
+		System.out.println("I'm as free as a Bird now");
 	}
 }
 
@@ -96,7 +98,31 @@ class Question3 {
 	}
 }
 
+class Plane implements Flying {
+	String CallSign;
+	Plane(String s){
+		CallSign = s;
+	}
+
+	public void fly(){
+		System.out.println("Fly me to the moon");
+	}
+}
+
 class QuestionInterface5 {
 	public static void main (String args[]){
+
+		Sparrow S = new Sparrow(125,2);
+		Plane P = new Plane("GO1984");
+
+		ArrayList<Flying> Flyers = new ArrayList<Flying>();
+
+		Flyers.add(S);
+		Flyers.add(P);
+
+		for(Flying f : Flyers){
+			f.fly();
+		}
+
 	}
 }
