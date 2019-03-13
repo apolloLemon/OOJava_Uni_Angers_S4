@@ -6,10 +6,16 @@ class Point {
 		x=_x;
 		y=_y;
 	}
+
+	void translation (int dx, int dy){
+		x+=dx;
+		y+=dy;
+	}
 }
 
 abstract class Shape {
 	abstract double perimeter ();
+	abstract void translation(int dx, int dy);
 }
 
 class Circle extends Shape {
@@ -29,6 +35,10 @@ class Circle extends Shape {
 
 	public String toString(){
 		return name+"("+centre.x+","+centre.y+")\nradius: "+radius+"\nperimeter: "+this.perimeter();
+	}
+
+	void translation(int dx ,int dy){
+		centre.translation(dx,dy);
 	}
 }
 
@@ -62,11 +72,33 @@ abstract class Polygone extends Shape {
 		}
 		return out;
 	}
+
+	public String toString(){
+		String out =  name+" perimeter: "+this.perimeter()+"\npoints:\n";
+		for(Point p : points){
+			out += "("+p.x+","+p.y+")\n";
+		}
+		return out;
+	}
+
+	final void translation(int dx, int dy){
+		for(Point p : points){
+			p.translation(dx,dy);
+		}
+	}
 }
 
 class Triange extends Polygone {
 	Triange(String n, Point[] p){
 		points = new Point[3];
+		points = p;
+		name = n;
+	}
+}
+
+class Quad extends Polygone {
+	Quad(String n, Point[] p){
+		points = new Point[4];
 		points = p;
 		name = n;
 	}
@@ -78,6 +110,36 @@ class TestPolygone {
 		Point b = new Point(1,1);
 		Point c = new Point(2,0);
 
+
 		Triange t = new Triange("Tri", new Point[]{a,b,c});
+		System.out.println(t);
+	}
+}
+
+class TestTranslation {
+	public static void main (String args[]){
+		Point o = new Point(0,0);
+		Point i = new Point(0,1);
+		Point j = new Point(1,0);		
+		Point a = new Point(1,1);
+		Point b = new Point(2,0);
+		Point c = new Point(2,1);
+
+		//Triange t = new Triange("TriRec",new Point[]{o,i,j});
+		Quad sqr = new Quad("Carre",new Point[]{i,j,b,a});
+		Circle crcl = new Circle("Circle", o, 1.0); 
+
+
+		Shape[] ps = new Shape[]{sqr,crcl};
+
+		for(Shape p : ps){
+			System.out.println(p);
+		}
+		for(Shape p : ps){
+			p.translation(4,2);
+		}
+		for(Shape p : ps){
+			System.out.println(p);
+		}
 	}
 }
