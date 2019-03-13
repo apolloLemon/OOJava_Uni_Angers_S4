@@ -1,4 +1,5 @@
 import java.util.*;
+import java.io.*;
 
 class Calculatrice {
 
@@ -32,7 +33,7 @@ class Calculatrice {
 		}
 	}
 
-	double lancementCalcul(){
+	double lancementCalcul() throws IOException{
 		double a=0, b=0;
 		String op="";
 		Boolean flag;
@@ -69,22 +70,32 @@ class Calculatrice {
 
 		} while(flag);
 
+		double out;
 		switch(op){
 			case "+":
-				return a+b;
+				out = a+b;
+				break;
 			case "-":
-				return a-b;
+				out = a-b;
+				break;
 			case "*":
-				return a*b;
+				out = a*b;
+				break;
 			case "/":
-				return a/b;
+				out = a/b;
+				break;
 			case "%":
-				return a%b;
+				out = a%b;
+				break;
 			default:
-				return a;
+				out = a;
 		}
 
-		//return a;
+		FileWriter fw = new FileWriter("log.txt",true);
+		fw.write(a+op+b+"="+out+"\n");
+		fw.close();
+
+		return out;
 	}
 
 
@@ -94,6 +105,8 @@ class Calculatrice {
 class TestOne {
 	public static void main (String args[]){
 		Calculatrice c = new Calculatrice();
-		System.out.println("Le resultat est "+c.lancementCalcul());
+		try{
+			System.out.println("Le resultat est "+c.lancementCalcul());
+		} catch (IOException e) {}
 	}
 }
