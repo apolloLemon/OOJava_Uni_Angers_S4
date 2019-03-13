@@ -91,8 +91,9 @@ class Calculatrice {
 				out = a;
 		}
 
+		Date d = new Date();
 		FileWriter fw = new FileWriter("log.txt",true);
-		fw.write(a+op+b+"="+out+"\n");
+		fw.write(d+" :: "+a+op+b+"="+out+"\n");
 		fw.close();
 
 		return out;
